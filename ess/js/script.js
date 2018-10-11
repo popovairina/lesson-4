@@ -52,11 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
             chooseIncome: function () {
               let items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
               while (typeof(items) != 'string' && items == '' && items == null) {
-                  appData.income = items.split(', ');
-                  appData.income.forEach(function(item, i) {
-                     console.log('Способы доп. заработка: ' + i + ' - ' + item);
-                  });
+                  items = prompt('Что принесет дополнительный доход? (Перечислите через запятую)', '');
               }
+              appData.income = items.split(', ');
+              appData.income.forEach(function(item, i) {
+                console.log('Способы доп. заработка: ' + i + ' - ' + item);
+              });
             }
         };
 
